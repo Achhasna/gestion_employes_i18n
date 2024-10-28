@@ -1,4 +1,11 @@
 package ma.ensa.msgi18nEmp.repository;
 
-public interface EmployeeRepository {
+import ma.ensa.msgi18nEmp.model.Employee;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface EmployeeRepository extends JpaRepository<Employee, Long> {
+    Optional<Employee> findByEmail(String email);
 }
+
